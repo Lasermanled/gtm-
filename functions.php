@@ -348,9 +348,9 @@ function laserman_tracking_2026()
                 if (!phone) return '';
                 phone = phone.replace(/[^0-9]/g, '');
 
-                if (phone.startsWith('54')) return phone;
-                if (phone.startsWith('0')) return '54' + phone.substring(1);
-                if (phone.length >= 10 && !phone.startsWith('54')) return '54' + phone;
+                if (phone.startsWith('54')) return '+' + phone;
+                if (phone.startsWith('0')) return '+54' + phone.substring(1);
+                if (phone.length >= 10 && !phone.startsWith('54')) return '+54' + phone;
 
                 return phone;
             }
