@@ -1,0 +1,91 @@
+/*
+Theme Name: DK Laserman Pro
+Theme URI: https://laserman.com.ar
+Author: DK Laserman
+Author URI: https://laserman.com.ar
+Description: Tema personalizado para DK Laserman Pro - Shows Láser, Mapping 3D y Túneles Láser Inmersivos.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: dk-laserman
+*/
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: #090f0a;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+}
+
+.neon-glow {
+    text-shadow: 0 0 10px rgba(0, 255, 29, 0.5), 0 0 20px rgba(0, 255, 29, 0.3);
+}
+.neon-box {
+    box-shadow: 0 0 30px rgba(0, 255, 29, 0.2);
+}
+
+.bg-pattern {
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(0, 255, 29, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(0, 255, 29, 0.03) 0%, transparent 50%);
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-hover {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover:hover {
+    transform: translateY(-8px);
+}
+
+.mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    pointer-events: none;
+}
+.mobile-menu.open {
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+@media (max-width: 767px) {
+    .section-mobile-adjust {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    .grid-mobile-adjust {
+        gap: 0.5rem !important;
+    }
+    .card-mobile-adjust {
+        padding: 1.25rem !important;
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 29, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(0, 255, 29, 0.6); }
+}
+.animate-glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #090f0a; }
+::-webkit-scrollbar-thumb { background: #00ff1d33; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #00ff1d66; }
